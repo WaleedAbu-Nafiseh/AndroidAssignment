@@ -1,7 +1,6 @@
-package com.example.project1.cars;
-
+package com.example.project1.view.cars;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,12 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.project1.R;
-import com.example.project1.model.Cars.CarItem;
 import com.example.project1.model.Cars.CarsDAO;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 public class CarListActivity extends AppCompatActivity {
     private ListView list;
@@ -35,19 +32,15 @@ public class CarListActivity extends AppCompatActivity {
 
         list.setAdapter(carsListAdapter);
 
-        AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent,
-                                       View view,
-                                       int position,
-                                       long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(CarListActivity.this, CarDetailsActivity.class);
+                   intent.putExtra("carPosition",position);
+                    startActivity(intent);
 
             }
         };
+        list.setOnItemClickListener(itemClickListener);
     }
 }

@@ -18,5 +18,8 @@ public class CarsDAO {
         createCarList();
         return items;
     }
+    public static AbstractItem getItemFromID( int position){
+        return items[position];
+    }
 }
 

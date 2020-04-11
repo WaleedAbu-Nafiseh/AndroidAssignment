@@ -1,4 +1,4 @@
-package com.example.project1;
+package com.example.project1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import com.example.project1.cars.CarListActivity;
+
+import com.example.project1.R;
+import com.example.project1.view.cars.CarListActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,5 +43,4 @@ public class MainActivity extends AppCompatActivity {
         };
         list.setOnItemClickListener(itemClickListener);
     }
-
 }
