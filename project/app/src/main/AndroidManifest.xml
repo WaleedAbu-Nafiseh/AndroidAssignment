@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.cars.CarDetailsActivity"></activity>
+        <activity android:name=".view.SelectedItemsActivity"/>
+        <activity android:name=".view.Food.FoodListActivity" />
+        <activity android:name=".view.Food.FoodDetailsActivity" />
+        <activity android:name=".view.Electronics.ElectronicsDetailsActivity" />
+        <activity android:name=".view.Electronics.ElectronicsListActivity" />
+        <activity android:name=".view.cloths.ClothesDetailsActivity" />
+        <activity android:name=".view.cloths.ClothesListActivity" />
+        <activity android:name=".view.cars.CarDetailsActivity" />
         <activity android:name=".view.cars.CarListActivity" />
         <activity android:name=".view.MainActivity">
             <intent-filter>

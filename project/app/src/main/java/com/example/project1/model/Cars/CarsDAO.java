@@ -5,6 +5,7 @@ import com.example.project1.model.abstractData.AbstractItem;
 
 public class CarsDAO {
     private static  AbstractItem[] items;
+
     private static void createCarList(){
         items= new AbstractItem[]{
                 new CarItem("BMW", "This is an amazingly Fast Car", R.drawable.bmw_car, 54584, "X2", 1998),
