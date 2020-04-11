@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.project1.R;
+import com.example.project1.model.Cars.CarsDAO;
+import com.example.project1.model.abstractData.AbstractItem;
 import com.example.project1.view.Electronics.ElectronicsListActivity;
 import com.example.project1.view.Food.FoodListActivity;
 import com.example.project1.view.cars.CarListActivity;
@@ -35,6 +37,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         list = findViewById(R.id.lstVwStoresList);
         storesList = new ArrayList<String>();
+
+        Gson gson = new Gson();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor=prefs.edit();
+
+        ArrayList<AbstractItem> selectedItems= new ArrayList<AbstractItem>();
+        selectedItems.add(new AbstractItem( "itemName",  "Descr of selected item",  R.drawable.bmw_car,  55));
+        String selectedItemsJSON = gson.toJson(selectedItems);
+        editor.putString("selectedItemsFile",selectedItemsJSON);
+        editor.commit();
+
+
         //Creation of dummy data
         storesList.add(CARS);
         storesList.add(FOOD);
@@ -62,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         list.setOnItemClickListener(itemClickListener);
-        Gson gson = new Gson();
+
+    }
+
+    public void goToSelectedItems(View view) {
+        Intent intent = new Intent(MainActivity.this, SelectedItemsActivity.class);
+        startActivity(intent);
     }
 }

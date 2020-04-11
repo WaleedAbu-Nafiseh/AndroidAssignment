@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.SelectedItemsActivity"/>
+        <activity android:name=".view.SelectedItemDetailsActivity"></activity>
+        <activity android:name=".view.SelectedItemsActivity" />
         <activity android:name=".view.Food.FoodListActivity" />
         <activity android:name=".view.Food.FoodDetailsActivity" />
         <activity android:name=".view.Electronics.ElectronicsDetailsActivity" />
