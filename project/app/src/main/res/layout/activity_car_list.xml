@@ -5,10 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
-
+    tools:context=".view.cars.CarListActivity">
     <ListView
-        android:id="@+id/lstVwStoresList"
+        android:id="@+id/lstvwCarsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
@@ -16,6 +15,4 @@
 
 
     </ListView>
-
-
 </LinearLayout>
