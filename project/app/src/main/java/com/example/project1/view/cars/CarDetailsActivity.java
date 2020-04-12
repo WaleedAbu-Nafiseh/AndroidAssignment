@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +16,9 @@ import com.example.project1.model.Cars.CarItem;
 import com.example.project1.model.Cars.CarsDAO;
 import com.example.project1.model.abstractData.AbstractItem;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class CarDetailsActivity extends AppCompatActivity {
@@ -23,6 +26,7 @@ public class CarDetailsActivity extends AppCompatActivity {
     TextView txtCarPrice;
     ImageView imgCar;
     private ArrayList carsList;
+    CarItem car ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,7 @@ public class CarDetailsActivity extends AppCompatActivity {
         imgCar= findViewById(R.id.imgCar);
         Intent intent = getIntent();
         int position= (int) intent.getExtras().get("carPosition");
-        CarItem car= (CarItem) CarsDAO.getItemFromID(position);
+        car= (CarItem) CarsDAO.getItemFromID(position);
         imgCar.setImageResource(car.getImageID());
         txtCarName.setText( car.getItemName());
         txtCarPrice.setText(car.getPrice()+"");
@@ -42,9 +46,29 @@ public class CarDetailsActivity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String JSON = prefs.getString("carsList","");
         AbstractItem[] abs= gson.fromJson(JSON,CarItem[].class);
-        for (int i=0;i<abs.length;i++){
-            Log.e("e", abs[i].getItemName());
-        }
 
+
+    }
+
+    public void selectItem(View view) {
+    //get the whole list from teh shared preferences
+
+        Gson gson = new Gson();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String JSON = prefs.getString("selectedItemsFile","");
+        Type type =new TypeToken<ArrayList<AbstractItem>>(){}.getType();
+        ArrayList<AbstractItem> selectedItems = gson.fromJson(JSON,type);
+
+        selectedItems.add(car);
+
+
+        //Write to the File
+        Gson gsonR = new Gson();
+        SharedPreferences prefsR = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor=prefsR.edit();
+
+        String selectedItemsJSON = gson.toJson(selectedItems);
+        editor.putString("selectedItemsFile",selectedItemsJSON);
+        editor.commit();
     }
 }
