@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,13 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
         Gson gson = new Gson();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor=prefs.edit();
+        if(prefs.contains("selectedItemsFile")){
+            Log.e("e","exists");
+        }else{ SharedPreferences.Editor editor=prefs.edit();
 
-        ArrayList<AbstractItem> selectedItems= new ArrayList<AbstractItem>();
-        selectedItems.add(new AbstractItem( "itemName",  "Descr of selected item",  R.drawable.bmw_car,  55));
-        String selectedItemsJSON = gson.toJson(selectedItems);
-        editor.putString("selectedItemsFile",selectedItemsJSON);
-        editor.commit();
+            ArrayList<AbstractItem> selectedItems= new ArrayList<AbstractItem>();
+            selectedItems.add(new AbstractItem( "itemName",  "Descr of selected item",  R.drawable.bmw_car,  55));
+            String selectedItemsJSON = gson.toJson(selectedItems);
+            editor.putString("selectedItemsFile",selectedItemsJSON);
+            editor.commit();}
+
 
 
         //Creation of dummy data
