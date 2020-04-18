@@ -6,30 +6,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.cars.CarDetailsActivity">
+    android:layout_margin="8dp"
+    tools:context=".view.cloths.ClothesListActivity">
 
     <ImageView
-        android:id="@+id/imgSelected"
+        android:id="@+id/clothesimage"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:padding="15dp"
-        android:contentDescription="selectedPicture"/>
+        android:padding="15dp" />
 
     <TextView
-        android:id="@+id/txtSelectedName"
+        android:id="@+id/BrandName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+
+        android:fontFamily="@font/creepster"
         android:padding="15dp"
-        android:text="Hello"/>
+        android:textColor="#FFD700"
+        android:textSize="32dp" />
 
     <TextView
-        android:id="@+id/txtSelectedPrice"
+        android:id="@+id/itemSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+
+        android:fontFamily="@font/creepster"
         android:padding="15dp"
-        android:text="here"/>
+        android:textColor="#FFD700"
+        android:textSize="32dp" />
+
+    <TextView
+        android:id="@+id/itemsale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/abeezee"
+        android:padding="15dp"
+        android:textColor="#F00"
+        android:textSize="32dp" />
+
+    <Button
+        android:layout_width="187dp"
+        android:layout_height="74dp"
+        android:layout_gravity="center"
+        android:onClick="selectClothItem"
+        android:text="Select"
+
+        />
+
 
 </LinearLayout>
