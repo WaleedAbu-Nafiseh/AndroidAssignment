@@ -7,13 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".view.cloths.ClothesListActivity"
     android:orientation="vertical"
+   android:background="@drawable/nnnnnnnnnnnnnn"
+
+
+
     >
 
     <ListView
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
         android:id="@+id/clothes_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:divider="#F41C8A"
+        android:dividerHeight="10dp"
+        android:listSelector="#F41C8A"
+
         >
+
 
     </ListView>
 </LinearLayout>

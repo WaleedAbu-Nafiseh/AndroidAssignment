@@ -17,6 +17,7 @@ import com.example.project1.model.Electronics.ElectronicsItem;
 import com.example.project1.model.abstractData.AbstractItem;
 import com.example.project1.model.cloths.ClothesDAO;
 import com.example.project1.model.cloths.ClothesItem;
+import com.example.project1.view.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,6 +30,7 @@ public class ClothesDetailsActivity extends AppCompatActivity {
     TextView size;
     TextView sale;
     ClothesItem Cloth;
+    Button back;
 
 
     @Override
@@ -46,6 +48,15 @@ public class ClothesDetailsActivity extends AppCompatActivity {
         BrandName.setText(Cloth.getBrandName());
         size.setText(Cloth.getSize());
         sale.setText(Cloth.getSale());
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClothesDetailsActivity.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     }
@@ -68,5 +79,6 @@ public class ClothesDetailsActivity extends AppCompatActivity {
         String selectedItemsJSON = gsonR.toJson(selectedItems);
         editor.putString("selectedItemsFile",selectedItemsJSON);
         editor.commit();
+
     }
 }
