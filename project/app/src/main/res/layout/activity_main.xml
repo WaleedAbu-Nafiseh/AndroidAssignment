@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity"
-    android:orientation="vertical"
-    android:background="@drawable/lav7">
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/MallLogo"
@@ -19,15 +18,10 @@
     <ListView
         android:id="@+id/lstVwStoresList"
         android:layout_width="match_parent"
-      
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        android:layout_weight="25"
-        android:divider="#CC99FF"
-        android:dividerHeight="15dp"
-        android:listSelector="#CC99FF"
-        />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10dp"
+        android:layout_weight="25" />
 
 
     <Button
@@ -35,11 +29,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnGoToSelected"
         android:onClick="goToSelectedItems"
+        android:padding="5dp"
         android:text="Selected Item"
-        android:layout_gravity="center"
-        android:background="@drawable/btns"
-        android:textColor="#990099"
-        android:textSize="20dp"
+        android:layout_weight="1"
         />
 
 </LinearLayout>

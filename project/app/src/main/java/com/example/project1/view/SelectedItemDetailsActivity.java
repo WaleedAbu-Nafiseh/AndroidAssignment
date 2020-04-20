@@ -44,7 +44,6 @@ public class SelectedItemDetailsActivity extends AppCompatActivity {
         Log.e("",selectedItem.getItemName());
         txtSelectedName.setText(selectedItem.getItemName());
 
-
         txtSelectedPrice.setText(selectedItem.getPrice()+"");
         imgSelected.setImageResource(selectedItem.getImageID());
 
