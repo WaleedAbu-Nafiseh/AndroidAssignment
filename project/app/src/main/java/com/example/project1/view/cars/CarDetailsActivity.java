@@ -71,4 +71,6 @@ public class CarDetailsActivity extends AppCompatActivity {
         editor.putString("selectedItemsFile",selectedItemsJSON);
         editor.commit();
     }
+
+
 }
