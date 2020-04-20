@@ -42,7 +42,6 @@ public class SelectedItemsActivity extends AppCompatActivity {
         String JSON = prefs.getString("selectedItemsFile","");
         Type type =new TypeToken<ArrayList<AbstractItem>>(){}.getType();
         ArrayList<AbstractItem> selectedItems = gson.fromJson(JSON,type);
-        Log.e("e",selectedItems.get(0).getItemName()+" : Is selected");
 
         SelectedItemsAdapter = new ArrayAdapter<AbstractItem>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, selectedItems);
