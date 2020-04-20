@@ -8,9 +8,18 @@
     android:orientation="vertical"
     android:background="@drawable/lav7">
 
+    <ImageView
+        android:id="@+id/MallLogo"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:contentDescription="MallLogo"
+        android:src="@drawable/mall"/>
+
     <ListView
         android:id="@+id/lstVwStoresList"
         android:layout_width="match_parent"
+      
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
@@ -18,8 +27,6 @@
         android:divider="#CC99FF"
         android:dividerHeight="15dp"
         android:listSelector="#CC99FF"
-
-
         />
 
 
@@ -28,10 +35,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnGoToSelected"
         android:onClick="goToSelectedItems"
-        android:padding="38dp"
         android:text="Selected Item"
         android:layout_gravity="center"
-
         android:background="@drawable/btns"
         android:textColor="#990099"
         android:textSize="20dp"
