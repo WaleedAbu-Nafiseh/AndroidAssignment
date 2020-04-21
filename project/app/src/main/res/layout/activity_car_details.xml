@@ -37,6 +37,8 @@
         android:gravity="bottom|left"
         android:id="@+id/btnSelectItem"
         android:onClick="selectItem"
+        android:text="select Item"
         />
+
 
 </LinearLayout>

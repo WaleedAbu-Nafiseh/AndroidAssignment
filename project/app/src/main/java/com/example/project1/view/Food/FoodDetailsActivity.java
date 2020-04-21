@@ -45,7 +45,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int position= (int) intent.getExtras().get("FoodPosition");
-        FoodItem food= (FoodItem) FoodDAO.getItemFromID(position);
+         food= (FoodItem) FoodDAO.getItemFromID(position);
         FoodImg .setImageResource(food.getImageID());
         foodName.setText("food Name : " + food.getItemName());
         FoodPrice.setText("The Price is "+food.getPrice()+"$");

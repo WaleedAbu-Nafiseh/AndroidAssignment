@@ -10,11 +10,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project1.R;
 import com.example.project1.model.Cars.CarItem;
 import com.example.project1.model.Cars.CarsDAO;
 import com.example.project1.model.abstractData.AbstractItem;
+import com.example.project1.view.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -25,7 +27,6 @@ public class CarDetailsActivity extends AppCompatActivity {
     TextView txtCarName;
     TextView txtCarPrice;
     ImageView imgCar;
-    private ArrayList carsList;
     CarItem car ;
 
     @Override
@@ -41,12 +42,6 @@ public class CarDetailsActivity extends AppCompatActivity {
         imgCar.setImageResource(car.getImageID());
         txtCarName.setText( car.getItemName());
         txtCarPrice.setText(car.getPrice()+"");
-
-        Gson gson = new Gson();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String JSON = prefs.getString("carsList","");
-        AbstractItem[] abs= gson.fromJson(JSON,CarItem[].class);
-
 
     }
 
@@ -67,9 +62,13 @@ public class CarDetailsActivity extends AppCompatActivity {
         SharedPreferences prefsR = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor=prefsR.edit();
 
-        String selectedItemsJSON = gson.toJson(selectedItems);
+        String selectedItemsJSON = gsonR.toJson(selectedItems);
         editor.putString("selectedItemsFile",selectedItemsJSON);
         editor.commit();
+        Toast.makeText(this, "The Item Selected", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(CarDetailsActivity.this, MainActivity.class);
+        startActivity(intent);
+
     }
 
 
