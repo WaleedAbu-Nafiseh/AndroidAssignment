@@ -10,11 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project1.R;
 import com.example.project1.model.Electronics.ElectronicsDAO;
 import com.example.project1.model.Electronics.ElectronicsItem;
 import com.example.project1.model.abstractData.AbstractItem;
+import com.example.project1.view.MainActivity;
+import com.example.project1.view.cars.CarDetailsActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -71,5 +74,8 @@ public class ElectronicsDetailsActivity extends AppCompatActivity {
         String selectedItemsJSON = gson.toJson(selectedItems);
         editor.putString("selectedItemsFile",selectedItemsJSON);
         editor.commit();
+        Toast.makeText(this, "The Item Selected", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(ElectronicsDetailsActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

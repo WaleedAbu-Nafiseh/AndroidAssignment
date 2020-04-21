@@ -18,6 +18,8 @@ import com.example.project1.model.Cars.CarsDAO;
 import com.example.project1.model.Food.FoodDAO;
 import com.example.project1.model.Food.FoodItem;
 import com.example.project1.model.abstractData.AbstractItem;
+import com.example.project1.view.MainActivity;
+import com.example.project1.view.cars.CarDetailsActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -94,6 +96,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         editor.putString("selectedItemsFile",selectedItemsJSON);
         editor.commit();
         Toast.makeText(this, "The Item Selected", Toast.LENGTH_LONG).show();
-    }
+        Intent intent = new Intent(FoodDetailsActivity.this, MainActivity.class);
+        startActivity(intent);    }
 
 }

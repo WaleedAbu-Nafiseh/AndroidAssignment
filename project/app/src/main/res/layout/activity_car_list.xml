@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.cars.CarListActivity">
+    tools:context=".view.cars.CarListActivity"
+    android:background="@color/lightPurple">
     <ListView
         android:id="@+id/lstvwCarsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
+        android:divider="@color/lightPurple"
+        android:dividerHeight="10dp"
+        android:listSelector="#40ffcc"
+        >
 
     </ListView>
 </LinearLayout>

@@ -13,9 +13,15 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
-        android:layout_weight="25" />
+        android:layout_weight="25"
+        android:divider="@color/lightPurple"
+        android:dividerHeight="10dp"
+        android:listSelector="#40ffcc"/>
 
-
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="The selected items were saved using the shared preferences "/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.cars.CarDetailsActivity">
+    tools:context=".view.cars.CarDetailsActivity"
+    android:background="#048260">
 
     <ImageView
         android:id="@+id/imgCar"
@@ -15,22 +16,29 @@
         android:layout_gravity="center"
         android:padding="15dp"
         android:contentDescription="CarPicture"/>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="description: "/>
     <TextView
         android:id="@+id/txtCarName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="15dp"
-        android:text="Hello"/>
-
+        android:text="description"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price L"/>
     <TextView
         android:id="@+id/txtPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="15dp"
-        android:text="here"/>
+        android:text="price"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

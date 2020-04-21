@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         }else{ SharedPreferences.Editor editor=prefs.edit();
 
             ArrayList<AbstractItem> selectedItems= new ArrayList<AbstractItem>();
-            selectedItems.add(new AbstractItem( "itemName",  "Descr of selected item",  R.drawable.bmw_car,  55));
             String selectedItemsJSON = gson.toJson(selectedItems);
             editor.putString("selectedItemsFile",selectedItemsJSON);
             editor.commit();}
