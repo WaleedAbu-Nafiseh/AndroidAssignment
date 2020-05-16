@@ -17,6 +17,7 @@ import com.example.project1.model.abstractData.AbstractItem;
 import com.example.project1.view.Electronics.ElectronicsListActivity;
 import com.example.project1.view.Food.FoodListActivity;
 import com.example.project1.view.cars.CarListActivity;
+import com.example.project1.view.cars.CarListActivityfrg;
 import com.example.project1.view.cloths.ClothesDetailsActivity;
 import com.example.project1.view.cloths.ClothesListActivity;
 import com.google.gson.Gson;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position==0){
-                    Intent intent = new Intent(MainActivity.this, CarListActivity.class);
+                    Intent intent = new Intent(MainActivity.this, CarListActivityfrg.class);
                     startActivity(intent);
                 }else if (position==1){
                     Intent intent = new Intent(MainActivity.this, FoodListActivity.class);

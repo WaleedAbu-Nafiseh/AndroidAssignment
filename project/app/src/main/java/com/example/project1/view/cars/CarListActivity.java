@@ -25,7 +25,7 @@ public class CarListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
         //Bind the listView to the object
-        list = findViewById(R.id.lstvwCarsList);
+        list = findViewById(R.id.lstvwCarsList1);
 
 
         Gson gson = new Gson();
@@ -49,7 +49,7 @@ public class CarListActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(CarListActivity.this, CarDetailsActivity.class);
+                    Intent intent = new Intent(CarListActivity.this, CarDetailedActivityfrg.class);
                    intent.putExtra("carPosition",position);
                     startActivity(intent);
 
