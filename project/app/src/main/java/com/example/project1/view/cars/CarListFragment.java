@@ -72,29 +72,10 @@ public class CarListFragment extends Fragment  implements View.OnClickListener{
         if(view !=null){
 
              recycler = (RecyclerView)view.findViewById(R.id.carsRecycler);
-
-
-
             recycler.setLayoutManager(new LinearLayoutManager(getContext()));
             CaptionedCarsAdapter adapter = new CaptionedCarsAdapter(carsList);
             recycler.setAdapter(adapter);
-/*
-            list = view.findViewById(R.id.lstvwCarsList1);
 
-
-            Log.e("e",carsList.indexOf(0)+" w");
-            carsListAdapter = new ArrayAdapter<String>(getContext(),
-                    android.R.layout.simple_spinner_item, carsList);
-            list.setAdapter(carsListAdapter);
-            AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getContext(), CarDetailsActivity.class);
-                    intent.putExtra("carPosition",position);
-                    startActivity(intent);
-                }
-            };
-            list.setOnItemClickListener(itemClickListener);*/
         }
     }
 

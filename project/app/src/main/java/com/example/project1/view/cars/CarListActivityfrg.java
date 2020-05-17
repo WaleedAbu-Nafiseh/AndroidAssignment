@@ -6,11 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
 import com.example.project1.R;
+import com.example.project1.model.Cars.CarsDAO;
+import com.google.gson.Gson;
 
 public class CarListActivityfrg extends AppCompatActivity {
 
@@ -19,6 +23,12 @@ public class CarListActivityfrg extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list_activityfrg2);
         Log.e("e","Here");
+        Gson gson1 = new Gson();
+        SharedPreferences prefs1 = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor=prefs1.edit();
+        String carsJSON = gson1.toJson(CarsDAO.getCarsList());
+        editor.putString("carsList",carsJSON);
+        editor.commit();
 
     }
     public static class ViewHolder extends RecyclerView.ViewHolder{

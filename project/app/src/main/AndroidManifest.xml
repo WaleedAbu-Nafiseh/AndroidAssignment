@@ -10,24 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.cars.CarDetailedActivityfrg"></activity>
-        <activity android:name=".view.cars.CarListActivityfrg" />
-        <activity android:name=".view.SelectedItemDetailsActivity" />
-        <activity android:name=".view.SelectedItemsActivity" />
-        <activity android:name=".view.Food.FoodListActivity" />
-        <activity android:name=".view.Food.FoodDetailsActivity" />
-        <activity android:name=".view.Electronics.ElectronicsDetailsActivity" />
-        <activity android:name=".view.Electronics.ElectronicsListActivity" />
-        <activity android:name=".view.cloths.ClothesDetailsActivity" />
-        <activity android:name=".view.cloths.ClothesListActivity" />
-        <activity android:name=".view.cars.CarDetailsActivity" />
-        <activity android:name=".view.cars.CarListActivity" />
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.cars.CarListActivityfrg" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.cars.CarDetailsActivity" />
+        <activity android:name=".view.cars.CarListActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
