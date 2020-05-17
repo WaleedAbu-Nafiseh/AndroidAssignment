@@ -51,9 +51,13 @@ public class MainActivity extends AppCompatActivity {
             editor.putString("selectedItemsFile",selectedItemsJSON);
             editor.commit();}
 
+        Gson gson1 = new Gson();
+        SharedPreferences prefs1 = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor=prefs1.edit();
+        String carsJSON = gson1.toJson(CarsDAO.getCarsList());
+        editor.putString("carsList",carsJSON);
+        editor.commit();
 
-
-        //Creation of dummy data
         storesList.add(CARS);
         storesList.add(FOOD);
         storesList.add(ELECTRONICS);

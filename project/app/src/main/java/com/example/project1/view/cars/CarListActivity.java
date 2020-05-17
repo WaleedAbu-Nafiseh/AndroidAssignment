@@ -25,8 +25,8 @@ public class CarListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
         //Bind the listView to the object
-        list = findViewById(R.id.lstvwCarsList1);
-
+       /* list = findViewById(R.id.lstvwCarsList1);
+*/
 
         Gson gson = new Gson();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -41,7 +41,11 @@ public class CarListActivity extends AppCompatActivity {
         carsList = new ArrayList<String>();
         carsList.addAll(Arrays.asList(CarsDAO.getCarsList()));
 
-        carsListAdapter = new ArrayAdapter<String>(getApplicationContext(),
+
+
+
+
+       /* carsListAdapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, carsList);
 
         list.setAdapter(carsListAdapter);
@@ -55,6 +59,6 @@ public class CarListActivity extends AppCompatActivity {
 
             }
         };
-        list.setOnItemClickListener(itemClickListener);
+        list.setOnItemClickListener(itemClickListener);*/
     }
 }

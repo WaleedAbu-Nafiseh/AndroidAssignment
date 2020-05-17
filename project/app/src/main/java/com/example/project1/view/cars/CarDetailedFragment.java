@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,19 +36,31 @@ public class CarDetailedFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        }
+
+    @Override
+    public void onStart() {
+        super.onStart();
         View view = getView();
+        Intent intent = getActivity().getIntent();
+        int pos= (int) intent.getExtras().get("carPosition");
+
+        Log.e("e","We got this position to Detailed"+pos);
         if(view !=null) {
             txtCarName= view.findViewById(R.id.txtCarName1);
             txtCarPrice= view.findViewById(R.id.txtPrice1);
             imgCar= view.findViewById(R.id.imgCar1);
-            Intent intent = getActivity().getIntent();
             int position= (int) intent.getExtras().get("carPosition");
             car= (CarItem) CarsDAO.getItemFromID(position);
+
+            Log.e("e","We got this name  to Detailed"+car.getItemName());
+
             imgCar.setImageResource(car.getImageID());
             txtCarName.setText( car.getItemName());
             txtCarPrice.setText(car.getPrice()+"");
         }
-        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

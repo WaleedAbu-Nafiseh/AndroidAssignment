@@ -13,6 +13,10 @@ public class CarsDAO {
                 new CarItem("Hyundai", "Very New Conditions", R.drawable.hyundai, 36452, "Accent 1.4", 2010),
                 new CarItem("TOYOTA", "refurbeshed Car", R.drawable.hyundai, 51475, "TOYNEW", 2007),
                 new CarItem("BMW X1" , "This is a brand new  Car", R.drawable.bmw_car, 125144, "X1", 2013),
+                new CarItem("BMW X1", "This is an amazingly Fast Car", R.drawable.x2, 54584, "X2", 1998),
+                new CarItem("Mercides", "The best Car", R.drawable.mayback, 4181500, "maybach", 2020),
+                new CarItem("Hyundai", "Very New Conditions", R.drawable.hyundai, 36452, "Accent 1.4", 2010),
+
         };
     }
     public  static AbstractItem[] getCarsList(){
